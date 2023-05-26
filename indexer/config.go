@@ -1,9 +1,10 @@
 package indexer
 
 import (
+	"time"
+
 	"github.com/savour-labs/fieryeyes/indexer/flags"
 	"github.com/urfave/cli"
-	"time"
 )
 
 type Config struct {
@@ -46,3 +47,25 @@ func NewConfig(ctx *cli.Context) (Config, error) {
 	}
 	return cfg, nil
 }
+
+// func NewConfig(ctx *cli.Context) (Config, error) {
+// 	cfg := Config{
+// 		EthRpc:              "",
+// 		DisableHTTP2:        false,
+// 		SyncBlockHeight:     8309081,
+// 		LoopInterval:        time.Millisecond,
+// 		DbUsername:          "root",
+// 		DbPassword:          "savour123",
+// 		DbHost:              "127.0.0.1",
+// 		DbPort:              3306,
+// 		DbName:              "indexer",
+// 		RpcHost:             "127.0.0.1",
+// 		RpcPort:             8080,
+// 		MetricsServerEnable: false,
+// 		MetricsHostname:     "",
+// 		MetricsPort:         0,
+// 		LogLevel:            "debug",
+// 		LogTerminal:         true,
+// 	}
+// 	return cfg, nil
+// }

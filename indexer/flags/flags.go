@@ -1,6 +1,8 @@
 package flags
 
 import (
+	"time"
+
 	"github.com/urfave/cli"
 )
 
@@ -12,53 +14,61 @@ func prefixEnvVar(name string) string {
 
 var (
 	EthRpcFlag = cli.StringFlag{
-		Name:     "eth-rpc",
-		Usage:    "Ethereum network name",
-		Required: true,
-		EnvVar:   prefixEnvVar("ETH_RPC"),
+		Name:  "eth-rpc",
+		Usage: "Ethereum network name",
+		// Required: true,
+		Value:  "https://mainnet.infura.io/v3/2004cc47a4cc47c69e8375ec0506a39f",
+		EnvVar: prefixEnvVar("ETH_RPC"),
 	}
 	SyncBlockHeightFlag = cli.Uint64Flag{
-		Name:     "sync-block-height",
-		Usage:    "sync current block",
-		Required: true,
-		EnvVar:   prefixEnvVar("SYNC_BLOCK_HEIGHT"),
+		Name:  "sync-block-height",
+		Usage: "sync current block",
+		// Required: true,
+		Value:  17341745,
+		EnvVar: prefixEnvVar("SYNC_BLOCK_HEIGHT"),
 	}
 	LoopIntervalFlag = cli.DurationFlag{
-		Name:     "loop-interval",
-		Usage:    "loop interval for sync block",
-		Required: true,
-		EnvVar:   prefixEnvVar("LOOP_INTERVAL"),
+		Name:  "loop-interval",
+		Usage: "loop interval for sync block",
+		// Required: true,
+		Value:  time.Millisecond,
+		EnvVar: prefixEnvVar("LOOP_INTERVAL"),
 	}
 	DBUserNameFlag = cli.StringFlag{
-		Name:     "db-user",
-		Usage:    "Username of the database connection",
-		Required: true,
-		EnvVar:   prefixEnvVar("DB_USER_NAME"),
+		Name:  "db-user",
+		Usage: "Username of the database connection",
+		// Required: true,
+		Value:  "root",
+		EnvVar: prefixEnvVar("DB_USER_NAME"),
 	}
 	DBHostFlag = cli.StringFlag{
-		Name:     "db-host",
-		Usage:    "Hostname of the database connection",
-		Required: true,
-		EnvVar:   prefixEnvVar("DB_HOST"),
+		Name:  "db-host",
+		Usage: "Hostname of the database connection",
+		// Required: true,
+		Value:  "127.0.0.1",
+		EnvVar: prefixEnvVar("DB_HOST"),
 	}
 	DBPortFlag = cli.Uint64Flag{
-		Name:     "db-port",
-		Usage:    "Port of the database connection",
-		Required: true,
-		EnvVar:   prefixEnvVar("DB_PORT"),
+		Name:  "db-port",
+		Usage: "Port of the database connection",
+		// Required: true,
+		Value:  3306,
+		EnvVar: prefixEnvVar("DB_PORT"),
 	}
 
 	DBPasswordFlag = cli.StringFlag{
-		Name:     "db-password",
-		Usage:    "Password of the database connection",
-		Required: true,
-		EnvVar:   prefixEnvVar("DB_PASSWORD"),
+		Name:  "db-password",
+		Usage: "Password of the database connection",
+		// Required: true,
+		Value:  "savour123",
+		EnvVar: prefixEnvVar("DB_PASSWORD"),
 	}
 	DBNameFlag = cli.StringFlag{
-		Name:     "db-name",
-		Usage:    "Database name of the database connection",
-		Required: true,
-		EnvVar:   prefixEnvVar("DB_NAME"),
+		Name:  "db-name",
+		Usage: "Database name of the database connection",
+		// Required: true,
+		Value:  "indexer",
+		EnvVar: prefixEnvVar("DB_NAME"),
 	}
 	RPCHostNameFlag = cli.StringFlag{
 		Name:   "RPC-hostname",
