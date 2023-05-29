@@ -28,9 +28,11 @@ type Config struct {
 
 func NewConfig(ctx *cli.Context) (Config, error) {
 	cfg := Config{
-		EthRpc:              ctx.GlobalString(flags.EthRpcFlag.Name),
-		DisableHTTP2:        ctx.GlobalBool(flags.HTTP2DisableFlag.Name),
-		SyncBlockHeight:     ctx.GlobalUint64(flags.SyncBlockHeightFlag.Name),
+		//EthRpc:              ctx.GlobalString(flags.EthRpcFlag.Name),
+		EthRpc:       "https://eth.llamarpc.com",
+		DisableHTTP2: ctx.GlobalBool(flags.HTTP2DisableFlag.Name),
+		//SyncBlockHeight:     ctx.GlobalUint64(flags.SyncBlockHeightFlag.Name),
+		SyncBlockHeight:     17341745,
 		LoopInterval:        ctx.GlobalDuration(flags.LoopIntervalFlag.Name),
 		DbUsername:          ctx.GlobalString(flags.DBUserNameFlag.Name),
 		DbPassword:          ctx.GlobalString(flags.DBPasswordFlag.Name),
